@@ -6,4 +6,4 @@ A simple fullstack ToDo List for a more organized life!
 - Storage: MongoDB
 - Libraries: Axios, Express.js, Mongoose
 
-View the project [here](https://boiling-hollows-68089.herokuapp.com/)
+View the project [here](https://boiling-hollows-68089.herokuapp.com/)!
