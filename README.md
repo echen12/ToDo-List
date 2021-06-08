@@ -4,7 +4,7 @@ A simple fullstack ToDo List for a more organized life!
 * React Hooks
 * JS arrow functions
 ## Stack
-- Front End: React.js
+- [Front End](https://github.com/echen12/ToDoList-FrontEnd): React.js
 - Back End: Node.js
 - Storage: MongoDB
 - Hosting: Heroku
