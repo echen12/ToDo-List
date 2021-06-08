@@ -1,0 +1,10 @@
+PUT http://localhost:3001/api/projects/2
+Content-Type: application/json
+
+{
+    "projectName": "second project",
+    "id": 2,
+    "firstproject": "first project",
+    "secondproject": "second project",
+    "thirdproject": "third project"
+}
