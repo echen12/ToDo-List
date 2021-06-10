@@ -1,31 +1,13 @@
+require('dotenv').config()
 const express = require("express")
 const app = express()
-app.use(express.json())
 const cors = require('cors')
+
+app.use(express.json())
 app.use(cors())
 app.use(express.static('build'))
-const mongoose = require('mongoose')
 
-const url = `mongodb+srv://projectList:project@cluster0.nt0wp.mongodb.net/projectList?retryWrites=true&w=majority`
-
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
-
-const projectSchema = new mongoose.Schema({
-    projectName: String,
-    id: Number,
-    projects: [
-        { task: String, _id: false }
-    ],
-})
-
-projectSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-        delete returnedObject.__v
-        delete returnedObject._id
-    }
-})
-
-const Project = mongoose.model("Project", projectSchema)
+const Project = require('./models/project')
 
 // get all projects
 app.get('/api/projects', (request, response) => {
@@ -95,7 +77,7 @@ app.put('/api/projects/:id', (request, response) => {
 })
 
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
